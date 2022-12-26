@@ -1,7 +1,7 @@
 package data_structures.list;
 
 /**
- * The interface for the ArrayList class.
+ * The interface for basic list data structures.
  */
 public interface List {
     /**
