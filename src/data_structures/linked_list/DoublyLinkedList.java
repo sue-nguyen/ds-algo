@@ -1,11 +1,10 @@
 package data_structures.linked_list;
 
 /**
- * A class representing a singly linked list.
+ * A class representing a doubly linked list.
  * @param <T> The type of the data stored in the node of the linked list.
  */
-public class SinglyLinkedList<T> implements LinkedList<T> {
-
+public class DoublyLinkedList<T> implements LinkedList<T> {
     /**
      * An inner class to represent the node of the linked list.
      * @param <T> The type of the data stored in the node.
@@ -18,6 +17,11 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
         private Node<T> next;
 
         /**
+         * Previous link of the node.
+         */
+        private Node<T> prev;
+
+        /**
          * Data of the node.
          */
         private final T data;
@@ -28,6 +32,7 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
          */
         public Node(T data) {
             this.data = data;
+            this.prev = null;
             this.next = null;
         }
 
@@ -48,30 +53,52 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
         }
 
         /**
-         * Setter method for the next link of the node
-         * @param next next link to be set for the node
+         * Getter method for the previous link of the node.
+         * @return previous link of the node
          */
-        public void setNext(Node<T> next) {
-            this.next = next;
+        public Node<T> getPrev() {
+            return prev;
+        }
+
+        /**
+         * Setter method for the next link of the node.
+         * @param n next link to be set for the node
+         */
+        public void setNext(Node<T> n) {
+            this.next = n;
+        }
+
+        /**
+         * Setter method for the previous link of the node.
+         * @param n previous link to be set for the node
+         */
+        public void setPrev(Node<T> n) {
+            this.prev = n;
         }
     }
 
     /**
-     * Root node of the linked list.
-     */
-    private Node<T> root;
-
-    /**
-     * Size, or the number of nodes, of the linked list.
+     * Size, or number of nodes, of the linked list.
      */
     private int size;
 
     /**
+     * Head node of the linked list.
+     */
+    private Node<T> head;
+
+    /**
+     * Tail node of the linked list.
+     */
+    private Node<T> tail;
+
+    /**
      * Constructs an empty linked list.
      */
-    public SinglyLinkedList() {
-        this.root = null;
+    public DoublyLinkedList() {
         this.size = 0;
+        this.head = null;
+        this.tail = null;
     }
 
     /**
@@ -87,15 +114,15 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
      * @param data data of the node
      */
     public void add(T data) {
-        Node<T> trav = root;
-        if (root == null) {
-            root = new Node<>(data);
+        Node<T> trav = new Node<>(data);
+        if (head == null) {
+            head = trav;
+            tail = head;
         }
         else {
-            while (trav.getNext() != null) {
-                trav = trav.getNext();
-            }
-            trav.setNext(new Node<>(data));
+            trav.setPrev(tail);
+            tail.setNext(trav);
+            tail = trav;
         }
         size++;
     }
@@ -107,7 +134,7 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
      */
     public boolean contains(T toFind) {
         Node<T> trav;
-        for (trav = root; trav != null; trav = trav.getNext()) {
+        for (trav = head; trav != null; trav = trav.getNext()) {
             if (trav.getData().equals(toFind))
                 return true;
         }
@@ -122,7 +149,7 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
             System.out.println("[ ]");
         else {
             System.out.print("[ ");
-            Node<T> trav = root;
+            Node<T> trav = head;
             while (trav != null) {
                 System.out.print(trav.getData());
                 if (trav.getNext() != null)

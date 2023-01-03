@@ -1,8 +1,7 @@
 package data_structures.list;
 
-public class Demo {
+public class AL_Demo {
     public static void main(String[] args) {
-
         // TEST EMPTY LIST
         ArrayList scores = new ArrayList();
         scores.retrieve();
