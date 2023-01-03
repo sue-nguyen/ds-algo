@@ -1,8 +1,9 @@
 # DATA STRUCTURES AND ALGORITHMS
 
-# List
-
-ADT of ArrayList with simple operations:
-- `add(item)`
-- `add(index, item)`
-- `remove(index)`
+- Array List
+- Singly Linked List
+- Doubly Linked List
+- Stack
+- Queue
+- Binary Search Tree
+- Graph
