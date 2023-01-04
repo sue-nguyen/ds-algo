@@ -1,4 +1,4 @@
-package data_structures.sorting.insertion;
+package data_structures.sorting;
 
 import java.util.Arrays;
 import static data_structures.sorting.RandomArray.size;
