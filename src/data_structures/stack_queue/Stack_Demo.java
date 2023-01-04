@@ -71,10 +71,5 @@ public class Stack_Demo {
 
         System.out.println("Pop: " + s.pop());
         s.print();
-
-        /*
-        OUTPUT:
-
-         */
     }
 }
