@@ -99,26 +99,43 @@ public class Queue<T> {
         size++;
     }
 
+    /**
+     * Removes the element at the front of the queue.
+     */
     public void dequeue() {
         root = root.getNext();
         size--;
     }
 
+    /**
+     * Removes the element at the front and returns its value.
+     * @return the value of the element at the front
+     */
     public T poll() {
         T res = peek();
-        root = root.getNext();
-        size--;
+        dequeue();
         return res;
     }
 
+    /**
+     * Returns the value of the element at the front of the queue without removing it.
+     * @return the value of the element at the front of the queue without removing it
+     */
     public T peek() {
         return root.data;
     }
 
+    /**
+     * Returns true if the queue is empty and false otherwise.
+     * @return true if the queue is empty and false otherwise
+     */
     public boolean isEmpty() {
         return root == null;
     }
 
+    /**
+     * Prints the String representation of the queue.
+     */
     public void print() {
         if (isEmpty())
             System.out.println("[ ]");
