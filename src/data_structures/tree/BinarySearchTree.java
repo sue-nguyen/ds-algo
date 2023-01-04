@@ -166,7 +166,7 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
             if (node.getLeft() != null)
                 inorder(node.getLeft());
             if (node.getData().equals(leftMost))
-                System.out.print("[ " + node.getData() + ", ");
+                System.out.print("In-Order: [ " + node.getData() + ", ");
             else if (node.getData().equals(rightMost))
                 System.out.print(node.getData() + " ]");
             else
@@ -192,7 +192,7 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
             System.out.print("[ ]");
         else {
             if (node.getData().equals(root.getData()))
-                System.out.print("[ " + node.getData() + ", ");
+                System.out.print("Pre-Order: [ " + node.getData() + ", ");
             else if (node.getData().equals(rightMost))
                 System.out.print(node.getData() + " ]");
             else
@@ -226,7 +226,7 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
             if (node.getData().equals(root.getData()))
                 System.out.print(node.getData() + " ]");
             else if (node.getData().equals(leftMost))
-                System.out.print("[ " + node.getData() + ", ");
+                System.out.print("Post-Order: [ " + node.getData() + ", ");
             else
                 System.out.print(node.getData() + ", ");
         }
@@ -243,11 +243,10 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
      * Traverses the binary search tree 3 ways: inorder, preorder, and postorder.
      */
     public void retrieve() {
-        System.out.print("Inorder traversal:\t\t");
         inorder();
-        System.out.print("\nPreorder traversal:\t\t");
+        System.out.println();
         preorder();
-        System.out.print("\nPostorder traversal:\t");
+        System.out.println();
         postorder();
     }
 }
