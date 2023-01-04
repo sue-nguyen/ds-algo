@@ -11,6 +11,9 @@ public class Stack_Demo {
         s.print();
         System.out.println("Peek: " + s.peek());
 
+        System.out.println("Pop: " + s.pop());
+        s.print();
+
         s.push('e');
         s.print();
         System.out.println("Peek: " + s.peek());

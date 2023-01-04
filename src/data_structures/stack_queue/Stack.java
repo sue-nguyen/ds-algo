@@ -1,7 +1,7 @@
 package data_structures.stack_queue;
 
 /**
- * A basic stack implemented using doubly linked list.
+ * A basic implementation of stack using doubly linked list.
  * @param <T> The type of data store in stack.
  */
 public class Stack<T> {
@@ -169,7 +169,7 @@ public class Stack<T> {
      * Prints the String representation of the stack.
      */
     public void print() {
-        if (size() == 0)
+        if (isEmpty())
             System.out.println("[ ]");
         else {
             System.out.print("[ ");
