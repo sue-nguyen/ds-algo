@@ -1,5 +1,8 @@
 package data_structures.tree;
 
+/**
+ * A demo for the binary search tree.
+ */
 public class BST_Demo {
     public static void main(String[] args) {
 

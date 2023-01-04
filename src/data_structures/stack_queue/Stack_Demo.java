@@ -1,5 +1,8 @@
 package data_structures.stack_queue;
 
+/**
+ * A demo for the stack.
+ */
 public class Stack_Demo {
     public static void main(String[] args) {
         Stack<Character> s = new Stack<>();

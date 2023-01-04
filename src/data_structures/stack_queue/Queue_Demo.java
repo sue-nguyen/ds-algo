@@ -1,5 +1,8 @@
 package data_structures.stack_queue;
 
+/**
+ * A demo for the queue.
+ */
 public class Queue_Demo {
     public static void main(String[] args) {
         Queue<Double> q = new Queue<>();
