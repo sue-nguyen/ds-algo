@@ -1,10 +1,7 @@
 package lessons.lesson01;
 
 import java.util.Scanner;
-
-/**
- * LINK: <a href="https://codeforces.com/contest/691/problem/A">Fashion In Berland</a>
- */
+//LINK: https://codeforces.com/contest/691/problem/A
 public class FashionInBerland {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
